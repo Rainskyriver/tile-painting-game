@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://bv3wnbodfgnf6"]
+
+[ext_resource type="Script" uid="uid://c2trdxmvuhg1m" path="res://Scripts/block.gd" id="1_ods6j"]
+[ext_resource type="ArrayMesh" uid="uid://63a6rtb8huis" path="res://Assets/tilegameanimation_Cube.res" id="2_q1lxy"]
+[ext_resource type="ArrayMesh" uid="uid://d04t0yi4pvgys" path="res://Assets/tilegameanimation_Cube_002.res" id="3_hjj06"]
+[ext_resource type="ArrayMesh" uid="uid://cb1d0nhnuk34r" path="res://Assets/tilegameanimation_Cube_003.res" id="4_npor0"]
+[ext_resource type="ArrayMesh" uid="uid://cirvbn7pil8hc" path="res://Assets/tilegameanimation_Cube_001.res" id="5_bcggr"]
+[ext_resource type="ArrayMesh" uid="uid://b7kdnwdpbxadv" path="res://Assets/tilegameanimation_Cylinder_001.res" id="6_f3q00"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t82uh"]
+size = Vector3(1.9889145, 1.8208008, 1.9710741)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ods6j"]
+size = Vector3(0.87719727, 1.5206299, 0.82910156)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q1lxy"]
+height = 2.572998
+radius = 0.6274414
+
+[node name="Block" type="Area3D"]
+disable_mode = 1
+script = ExtResource("1_ods6j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012939453, 0)
+shape = SubResource("BoxShape3D_t82uh")
+
+[node name="UpperLeft" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_q1lxy")
+skeleton = NodePath("../..")
+
+[node name="MiddleLeft" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_hjj06")
+skeleton = NodePath("../..")
+
+[node name="MiddleRight" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_npor0")
+skeleton = NodePath("../..")
+
+[node name="LowerRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("5_bcggr")
+skeleton = NodePath("../..")
+
+[node name="Middle" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.63, 0, 0, 0, 1, 0, 0, 0, 0.624, 0, 0, 0)
+mesh = ExtResource("6_f3q00")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55140793, 0.26031494, 0.5599443)
+shape = SubResource("BoxShape3D_ods6j")
+
+[node name="Area3D2" type="Area3D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55254304, 0.26031494, -0.5788804)
+shape = SubResource("BoxShape3D_ods6j")
+
+[node name="Area3D3" type="Area3D" parent="."]
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5536417, 0.26031494, 0.5599439)
+shape = SubResource("BoxShape3D_ods6j")
+
+[node name="Area3D4" type="Area3D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5514084, 0.26031494, -0.5803453)
+shape = SubResource("BoxShape3D_ods6j")
+
+[node name="Area3D5" type="Area3D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D5"]
+transform = Transform3D(-0.7179319, 0, 0.6961133, 0, 1, 0, -0.6961133, 0, -0.7179319, 0, -0.12634277, 0)
+shape = SubResource("CylinderShape3D_q1lxy")
+debug_color = Color(0.96779925, 6.738305e-07, 0.47500032, 0.41960785)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="input_event" from="Area3D2" to="." method="_on_area_3d_2_input_event"]
+[connection signal="input_event" from="Area3D3" to="." method="_on_area_3d_3_input_event"]
+[connection signal="input_event" from="Area3D4" to="." method="_on_area_3d_4_input_event"]
+[connection signal="input_event" from="Area3D5" to="." method="_on_area_3d_5_input_event"]

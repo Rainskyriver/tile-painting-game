@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b525wy1q4q37n"]
+
+[ext_resource type="Script" uid="uid://lynw6uvfpnqk" path="res://Scripts/test_puzzle.gd" id="1_8n8i0"]
+[ext_resource type="Texture2D" uid="uid://boembsku0k7ke" path="res://Assets/fieldofsunflowers.png" id="2_8n8i0"]
+
+[node name="TestPuzzle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 654.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8n8i0")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 38.0
+offset_right = 974.0
+offset_bottom = 638.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="Fieldofsunflowers" type="Sprite2D" parent="."]
+position = Vector2(145, 308)
+scale = Vector2(12, 12)
+texture = ExtResource("2_8n8i0")
+
+[node name="YouWin!" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 44.0
+offset_right = 1059.0
+offset_bottom = 455.0
+color = Color(0.2831582, 0.45381236, 1, 1)
+
+[node name="You Win!" type="Label" parent="YouWin!"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 132.0
+offset_right = 687.0
+offset_bottom = 255.0
+theme_override_font_sizes/font_size = 76
+text = "YOU WIN!"

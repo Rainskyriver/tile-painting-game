@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://tkb28aodkk8p"]
+
+[ext_resource type="PackedScene" uid="uid://b525wy1q4q37n" path="res://Scenes/test_puzzle.tscn" id="1_jjgbg"]
+
+[node name="Main" type="Node2D"]
+
+[node name="testpuzzle" parent="." instance=ExtResource("1_jjgbg")]
+offset_left = -7.0
+offset_top = 6.0
+offset_right = 1146.0
+offset_bottom = 659.0

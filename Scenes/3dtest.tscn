@@ -1,0 +1,310 @@
+[gd_scene format=3 uid="uid://cgmoneg348kpc"]
+
+[ext_resource type="Script" uid="uid://ewc6ivffq5bu" path="res://Scripts/3_dtest.gd" id="1_av26f"]
+[ext_resource type="Texture2D" uid="uid://e86144wndckq" path="res://Assets/brush.png" id="3_nhj1b"]
+[ext_resource type="Texture2D" uid="uid://bnqxvshit5b11" path="res://Assets/speen.png" id="4_n35m2"]
+[ext_resource type="Texture2D" uid="uid://cvxqd3yab5ukg" path="res://Assets/SAVE.png" id="4_t82uh"]
+[ext_resource type="Texture2D" uid="uid://qoh5oxqbefqi" path="res://Assets/LOAD.png" id="5_xrohk"]
+[ext_resource type="PackedScene" uid="uid://b5d6hw7uvmfi3" path="res://Scenes/load_menu.tscn" id="6_xrohk"]
+
+[node name="3DTest" type="Node3D" unique_id=1652842041]
+script = ExtResource("1_av26f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=784113494]
+transform = Transform3D(1, 0, 0, 0, 0.40705547, 0.91340345, 0, -0.91340345, 0.40705547, 0.67996836, 19.703718, 5.3575783)
+light_energy = 1.155
+light_indirect_energy = 1.95
+light_angular_distance = 3.0
+light_specular = 5.01
+shadow_enabled = true
+directional_shadow_split_1 = 0.23
+sky_mode = 1
+
+[node name="Container" type="Node3D" parent="." unique_id=255142332]
+
+[node name="Camera3D" type="Camera3D" parent="Container" unique_id=1079418329]
+transform = Transform3D(1, 0, 0, 0, 0.0019722434, 0.9999981, 0, -0.9999981, 0.0019722434, 0, 0, 0)
+
+[node name="UI" type="Control" parent="." unique_id=2122886384]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 804.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 655.0
+
+[node name="ButtonPicture" type="TextureRect" parent="UI" unique_id=1492423936]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 20.0
+offset_right = 314.0
+offset_bottom = 118.0
+texture = ExtResource("3_nhj1b")
+
+[node name="PaintButton" type="Button" parent="UI/ButtonPicture" unique_id=753900603]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 99.0
+flat = true
+
+[node name="ButtonPicture2" type="TextureRect" parent="UI" unique_id=2071183884]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 19.0
+offset_right = 187.0
+offset_bottom = 117.0
+texture = ExtResource("4_n35m2")
+
+[node name="SwapButton" type="Button" parent="UI/ButtonPicture2" unique_id=1929588081]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 99.0
+flat = true
+
+[node name="ColorContainer" type="GridContainer" parent="UI" unique_id=2121394900]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 148.0
+offset_right = 318.0
+offset_bottom = 251.0
+columns = 3
+
+[node name="Color1" type="ColorRect" parent="UI/ColorContainer" unique_id=1323806399]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1.92523e-07, 0.67431295, 0.92569035, 1)
+
+[node name="ColorButton1" type="Button" parent="UI/ColorContainer/Color1" unique_id=1108641648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Color2" type="ColorRect" parent="UI/ColorContainer" unique_id=476497979]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0.5921569, 0.24313726, 1)
+
+[node name="ColorButton2" type="Button" parent="UI/ColorContainer/Color2" unique_id=904761480]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Color3" type="ColorRect" parent="UI/ColorContainer" unique_id=744889224]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.52156866, 0.14117648, 1, 1)
+
+[node name="ColorButton3" type="Button" parent="UI/ColorContainer/Color3" unique_id=10455960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Color4" type="ColorRect" parent="UI/ColorContainer" unique_id=2054423507]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.14509805, 0.83137256, 0.050980393, 1)
+
+[node name="ColorButton4" type="Button" parent="UI/ColorContainer/Color4" unique_id=373684515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Color5" type="ColorRect" parent="UI/ColorContainer" unique_id=470676799]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.8117647, 0.019607844, 0, 1)
+
+[node name="ColorButton5" type="Button" parent="UI/ColorContainer/Color5" unique_id=1766671757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Color6" type="ColorRect" parent="UI/ColorContainer" unique_id=276060700]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.8117647, 0.019607844, 0, 1)
+
+[node name="ColorButton6" type="Button" parent="UI/ColorContainer/Color6" unique_id=1211938243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="ColorPicker" type="ColorPicker" parent="UI" unique_id=1259824385]
+visible = false
+layout_mode = 0
+offset_left = -240.0
+offset_top = 20.0
+offset_right = 39.0
+offset_bottom = 592.0
+theme_override_constants/separation = 3
+theme_override_constants/margin = 0
+theme_override_constants/label_width = 3
+theme_override_constants/sv_width = 245
+theme_override_constants/sv_height = 229
+theme_override_constants/h_width = 22
+theme_override_constants/center_slider_grabbers = 0
+alignment = 1
+
+[node name="Save" type="TextureRect" parent="UI" unique_id=1177240316]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 261.0
+offset_right = 145.0
+offset_bottom = 325.0
+texture = ExtResource("4_t82uh")
+
+[node name="SaveButton" type="Button" parent="UI/Save" unique_id=63945265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Load" type="TextureRect" parent="UI" unique_id=154346236]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 260.0
+offset_right = 315.0
+offset_bottom = 324.0
+texture = ExtResource("5_xrohk")
+
+[node name="LoadButton" type="Button" parent="UI/Load" unique_id=1436698624]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="LoadMenu" parent="UI" unique_id=90288059 instance=ExtResource("6_xrohk")]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -1.0
+offset_right = 345.0
+offset_bottom = 624.0
+
+[node name="SaveMenu" type="ColorRect" parent="." unique_id=2112660481]
+offset_left = 360.0
+offset_top = 190.0
+offset_right = 964.0
+offset_bottom = 432.0
+color = Color(0.56078434, 0.4862745, 0.74509805, 0.6431373)
+
+[node name="PaintingName" type="TextEdit" parent="SaveMenu" unique_id=1339546695]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 98.0
+offset_right = 546.0
+offset_bottom = 136.0
+placeholder_text = "Name of painting"
+
+[node name="Label" type="Label" parent="SaveMenu" unique_id=1504861249]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 106.0
+offset_right = 127.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Save as :"
+
+[node name="Yes" type="Button" parent="SaveMenu" unique_id=859907500]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 172.0
+offset_right = 163.0
+offset_bottom = 203.0
+text = "Yes"
+
+[node name="No" type="Button" parent="SaveMenu" unique_id=130016220]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 180.0
+offset_right = 541.0
+offset_bottom = 211.0
+text = "No
+"
+
+[node name="Confirm" type="ColorRect" parent="SaveMenu" unique_id=391279884]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 8.0
+offset_right = 478.0
+offset_bottom = 100.0
+color = Color(0.9882353, 0.5176471, 0.5529412, 0.42745098)
+
+[node name="Label" type="Label" parent="SaveMenu/Confirm" unique_id=1067473064]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 4.0
+offset_right = 321.0
+offset_bottom = 87.0
+text = "A painting with this name already
+exists, would you like to overwrite it?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="YesOverwrite" type="Button" parent="SaveMenu/Confirm" unique_id=1590987739]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 56.0
+offset_right = 110.0
+offset_bottom = 87.0
+text = "Yes"
+
+[node name="NoOverwrite" type="Button" parent="SaveMenu/Confirm" unique_id=819332880]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 54.0
+offset_right = 270.0
+offset_bottom = 85.0
+text = "No
+"
+
+[connection signal="pressed" from="UI/ButtonPicture/PaintButton" to="." method="_on_paint_button_pressed"]
+[connection signal="pressed" from="UI/ButtonPicture2/SwapButton" to="." method="_on_swap_button_pressed"]
+[connection signal="pressed" from="UI/ColorContainer/Color1/ColorButton1" to="." method="_on_color_button_1_pressed"]
+[connection signal="pressed" from="UI/ColorContainer/Color2/ColorButton2" to="." method="_on_color_button_2_pressed"]
+[connection signal="pressed" from="UI/ColorContainer/Color3/ColorButton3" to="." method="_on_color_button_3_pressed"]
+[connection signal="pressed" from="UI/ColorContainer/Color4/ColorButton4" to="." method="_on_color_button_4_pressed"]
+[connection signal="pressed" from="UI/ColorContainer/Color5/ColorButton5" to="." method="_on_color_button_5_pressed"]
+[connection signal="pressed" from="UI/ColorContainer/Color6/ColorButton6" to="." method="_on_color_button_6_pressed"]
+[connection signal="pressed" from="UI/Save/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="UI/Load/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="SaveMenu/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="SaveMenu/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="SaveMenu/Confirm/YesOverwrite" to="." method="_on_yes_overwrite_pressed"]
